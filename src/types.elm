@@ -45,4 +45,6 @@ type Styles
     | Body
     | Bold
     | Button
+    | GridStyle
+    | GridCell
     | None
