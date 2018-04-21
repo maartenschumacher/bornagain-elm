@@ -6,7 +6,7 @@ import Commands exposing (loadData)
 
 init : ( Model, Cmd Msg )
 init =
-    ( { countries = [], birth = Nothing }, loadData )
+    ( { countries = [], births = [] }, loadData )
 
 
 genderDescription : Gender -> String

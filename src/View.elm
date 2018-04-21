@@ -15,7 +15,7 @@ view model =
         column None
             [ center, width fill, spacing 30, padding 15 ]
             [ el Title [] (text "born again")
-            , whenJust model.birth body
+            , whenJust (List.head model.births) body
             , button Button [ onClick BirthMe, padding 7 ] (text "Click here to be born again")
             ]
 

@@ -5,7 +5,7 @@ import Http
 
 type alias Model =
     { countries : List Country
-    , birth : Maybe Birth
+    , births : List Birth
     }
 
 

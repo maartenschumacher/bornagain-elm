@@ -15,10 +15,24 @@ update msg model =
             ( model, getRandomNumber model.countries )
 
         RandomNumber number ->
-            ( { model | birth = toBirth model.countries number }, Cmd.none )
+            ( { model | births = addBirth number model }, Cmd.none )
 
         _ ->
             ( model, Cmd.none )
+
+
+addBirth : Int -> Model -> List Birth
+addBirth number model =
+    let
+        birth =
+            toBirth model.countries number
+    in
+        case birth of
+            Just b ->
+                b :: model.births
+
+            Nothing ->
+                model.births
 
 
 toBirth : List Country -> Int -> Maybe Birth
